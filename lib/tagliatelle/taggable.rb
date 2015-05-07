@@ -13,7 +13,7 @@ module Tagliatelle
 
     def tag_list=(value)
       self.tags = value.split(",").map(&:strip).uniq.map do |tag|
-        Tag.find_or_initialize_by(name: tag)
+        ::Tag.find_or_initialize_by(name: tag)
       end
     end
 
